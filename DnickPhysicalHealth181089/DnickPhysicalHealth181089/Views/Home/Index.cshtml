@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<div class="text-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Man_Doing_Warm_Up_Exercise_Cartoon.svg/1024px-Man_Doing_Warm_Up_Exercise_Cartoon.svg.png"  style="height:auto; width:500px"/>
+</div>
+
+<div class="text-center">
+    <ul style="list-style: none">
+        <li>
+            <a class="btn btn-block btn-outline-dark btn-warning font-weight-bold" asp-area="" asp-controller="Plans" asp-action="SelectedPlan">My plan  <i class="fas fa-bookmark"></i></a>
+        </li>
+        <br />
+        <li>
+            <a class="btn btn-block btn-outline-dark btn-warning font-weight-bold" asp-area="" asp-controller="UserPlans" asp-action="ChoosePlan">Choose a plan  <i class="fas fa-running"></i></a>
+        </li>
+        <br />
+        <li>
+            <a class="btn btn-block btn-outline-dark btn-warning font-weight-bold" asp-area="" asp-controller="Plans" asp-action="Categories">Categories  <i class="fas fa-tasks"></i></a>
+        </li>
+        <br />
+        <li>
+     
+            <a class="btn btn-block btn-outline-dark btn-warning font-weight-bold" asp-area="" asp-controller="Plans" asp-action="WaterIntake"> Track your water intake  <i class="fas fa-tint"> </i></a>
+            </li>
+    </ul>
+</div>

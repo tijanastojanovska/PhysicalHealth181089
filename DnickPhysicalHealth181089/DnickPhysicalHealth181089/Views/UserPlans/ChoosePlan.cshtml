@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DnickPhysicalHealth181089.Models.UserPlan>
+
+
+@{
+    ViewData["Title"] = "Choose";
+}
+
+<div class="container text-center">
+    <br />
+    <img style="height:300px; width:300px" src="https://freedesignfile.com/upload/2019/12/Yoga_background_woman_doing_exercise_sketch_cartoon_character_vector_34002547.jpg" />
+    <div> <h4> New here? Create your plan </h4></div>
+    <br />
+    <a class="btn btn-warning " asp-action="Create">Create your plan</a>
+    @foreach (var item in Model)
+    {
+
+
+
+        <br />
+        <h4>Already have a plan?</h4>
+        <br />
+
+        <a class="btn btn-warning" style="font-size:16px" asp-action="Details" asp-route-id="@item.Id">View details</a>
+
+        <h5 style="padding:5px">or</h5>
+
+        <a class="btn btn-warning " style="font-size:16px" asp-action="Edit" asp-route-id="@item.Id">Edit your plan</a>
+
+
+
+
+    }
+</div>

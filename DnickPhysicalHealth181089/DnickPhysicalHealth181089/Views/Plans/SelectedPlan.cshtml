@@ -1,0 +1,236 @@
+﻿@model Plan
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<PHUser> SignInManager
+@inject UserManager<PHUser> UserManager
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<h3>Program: @User.Identity.Name's plan</h3>
+<br />
+<h4 class="text-warning">Monday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/jkv-RMuigaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/UBMk30rjy0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+<h4 class="text-warning">Tuesday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/-p0PA9Zt8zk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/Y2eOW7XYWxc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+<h4 class="text-warning">Wednesday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/GtFO7P8sr0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   <div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/jpizoUy4K9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+
+<h4 class="text-warning">Thursday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/jkv-RMuigaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/UBMk30rjy0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+
+<h4 class="text-warning">Friday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/jkv-RMuigaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/Y2eOW7XYWxc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+<h4 class="text-warning">Saturday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/GtFO7P8sr0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/UBMk30rjy0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+
+
+<h4 class="text-warning">Sunday</h4>
+<div class="row">
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/-p0PA9Zt8zk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="card-body text-center text-warning">
+                Warm up
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/jpizoUy4K9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> <div class="card-body text-center text-warning">
+                Workout
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 300px; height: 250px;">
+
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/72MQmD8Z9Zw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body text-center text-warning">
+                Stretch
+            </div>
+        </div>
+    </div>
+    <div class="col" style="padding-top:10px">
+        <a class="btn btn-warning" asp-controller="Account" asp-action="MyProfile"> Share with your friends <i class="fas fa-share-alt"></i></a>
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@model List<DnickPhysicalHealth181089.Models.Plan>
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div>
+    <ul style="list-style: none">
+        <div class="row">
+        @foreach (Plan plan in Model)
+        {
+
+        <li class="text-center" style="padding-left:3px; padding-bottom:3px;margin-bottom:3px; margin-left:3px">
+            
+                <div class="card text-center" style="width: 500px; height: 400px;" >
+                   
+                    <a asp-area="" asp-controller="Plans" asp-action="SeePlan" asp-route-id="@plan.Id">
+                    <img class="card-img-top" src="@plan.ImageUrl" style="height: 300px; width:500px" alt="Image for plan!" />
+                    </a>
+                    <div class="card-body">
+                        <a class="card-title btn text-warning font-weight-bold" asp-area="" asp-controller="Plans" asp-action="SeePlan" asp-route-id="@plan.Id">@plan.PlanName</a>
+  </div>
+
+                </div>
+            
+        </li>      
+        }
+            </div>
+    </ul>
+</div>

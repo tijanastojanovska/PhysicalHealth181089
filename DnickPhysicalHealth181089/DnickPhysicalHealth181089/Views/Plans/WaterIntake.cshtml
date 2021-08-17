@@ -1,0 +1,250 @@
+﻿<style>
+    body {
+        text-align: center;
+    }
+
+    button {
+        padding-left: 10vh;
+    }
+
+    .glass {
+        margin: 50px auto;
+        height: 320px;
+        width: 210px;
+        position: relative;
+        border-style: none solid solid solid;
+        border-width: 8px;
+        border-color: lightgray;
+        border-radius: 10px;
+    }
+
+    .water {
+        width: 100%;
+        height: 10%;
+        background-color: skyblue;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #numOfGlassesToday {
+        font-size: 48px;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title>Track your water intake</title>
+</head>
+
+<body>
+    <h1>Track your water intake </h1>
+    <p id="currentDate"></p>
+    <p>Try drinking eight a day!</p>
+    <p id="todaysWaterIntake">0</p>
+    <button class="btn btn-primary" id="addGlass">Add Glass</button>
+    <button class="btn btn-danger" id="emptyGlass">Reset</button>
+    <div class="glass">
+        <div class="water"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+<script>
+
+    window.addEventListener("load", function () {
+
+       
+
+        var myDate = new Date();
+       
+        var currentDay = myDate.getDay();
+        let currentDayCopy = currentDay;
+      
+        var addGlass = document.getElementById("addGlass");
+        
+        var reset = document.getElementById("emptyGlass");
+       
+        var paragraphHandle = document.getElementById("todaysWaterIntake");
+
+        
+        addGlass.addEventListener("click", addNewGlass);
+        reset.addEventListener("click", resetMe);
+
+
+      
+        if (typeof (Storage) !== undefined) {
+
+           
+            if (localStorage.glassesOfWaterToday) {
+
+              
+                paragraphHandle.innerHTML = localStorage.glassesOfWaterToday;
+                
+                var numOfGlasses = localStorage.glassesOfWaterToday;
+                
+                setWaterAmount(numOfGlasses);
+
+
+            } else {
+
+                paragraphHandle.innerHTML = 0;
+
+            }
+
+        }
+
+      
+
+        function addNewGlass() {
+
+            
+            if (currentDayCopy == myDate.getDay()) {
+
+                
+                if (typeof (Storage) !== undefined) {
+
+                  
+                    if (localStorage.glassesOfWaterToday) {
+
+
+                        
+                        localStorage.glassesOfWaterToday++;
+
+                       
+                        paragraphHandle.innerHTML = localStorage.glassesOfWaterToday;
+
+                       
+                        var numOfGlasses = localStorage.glassesOfWaterToday;
+
+                       
+                        setWaterAmount(numOfGlasses);
+
+
+                    }
+
+                  
+                    else {
+
+                        
+                        localStorage.glassesOfWaterToday = 1;
+                      
+                        paragraphHandle.innerHTML = localStorage.glassesOfWaterToday;
+                      
+                        var numOfGlasses = localStorage.glassesOfWaterToday;
+                        
+                        setWaterAmount(numOfGlasses);
+                    }
+
+                }
+
+               
+                else {
+
+                    alert("Local Storage Is Not Supported");
+
+                }
+
+
+            }
+           
+            else {
+
+                console.log("Date is different");
+
+            }
+
+        }
+
+        function setWaterAmount(glasses) {
+
+          
+            switch (glasses) {
+                case "0":
+                    $('.water').animate({
+                        height: '0%'
+                    }, 1000)
+                    break;
+                case "1":
+                    $('.water').animate({
+                        height: '12.5%'
+                    }, 1000)
+                    break;
+                case "2":
+                    $('.water').animate({
+                        height: '25%'
+                    }, 1000)
+                    break;
+                case "3":
+                    $('.water').animate({
+                        height: '37.5%'
+                    }, 1000)
+                    break;
+                case "4":
+                    $('.water').animate({
+                        height: '50%'
+                    }, 1000)
+                    break;
+                case "5":
+                    $('.water').animate({
+                        height: '62.5%'
+                    }, 1000)
+                    break;
+                case "6":
+                    $('.water').animate({
+                        height: '75%'
+                    }, 1000)
+                    break;
+                case "7":
+                    $('.water').animate({
+                        height: '87.5%'
+                    }, 1000)
+                    break;
+                case "8":
+                    $('.water').animate({
+                        height: '100%'
+                    }, 1000);
+                    setTimeout(function () {
+
+                        resetMe();
+
+                    }, 1000)
+                    break;
+                default:
+                    console.log("Something went wrong");
+
+            }
+
+        }
+
+        function resetMe() {
+
+           
+            if (typeof (Storage) !== undefined) {
+
+                if (localStorage.glassesOfWaterToday) {
+
+                    localStorage.glassesOfWaterToday = 0;
+                    paragraphHandle.innerHTML = localStorage.glassesOfWaterToday;
+
+                    
+                    $('.water').animate({
+                        height: '0%'
+                    }, 1000)
+
+                }
+
+
+            }
+           
+            else {
+
+                alert("No local storage found");
+
+
+            }
+
+        }
+
+    });
+</script>
